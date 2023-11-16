@@ -19,7 +19,7 @@ dependencies:
   flutter_riverpod: ^2.4.6
   json_annotation: ^4.8.1
   envied: ^0.5.1
-
+  easy_localization: ^3.0.3
 
   widgets:
     path: module/widgets
