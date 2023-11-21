@@ -4,7 +4,7 @@
     },
     "general": {
         "button": {
-            "save": "Save"
+            "save": "Save {}"
         },
         "dialog": {
             "version": {

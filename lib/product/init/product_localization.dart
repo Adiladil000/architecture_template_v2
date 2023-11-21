@@ -22,7 +22,7 @@ final class ProductLocalization extends EasyLocalization {
     Locales.en.locale,
   ];
 
-  static const String _translationPath = 'assets/translations';
+  static const String _translationPath = 'asset/translations';
 
   /// Change project language by using [Locales]
   static Future<void> updateLanguage({
