@@ -12,19 +12,28 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
-# Core Dependencies
-  kartal: ^3.5.0
-  vexana: ^3.5.4
+  #Core
   equatable: ^2.0.5
+   
+
+
+  #Network Dependencies
+  vexana: ^3.5.4
+
+
+  #State
   flutter_riverpod: ^2.4.6
-  json_annotation: ^4.8.1
+
+  #Config
   envied: ^0.5.1
+  json_annotation: ^4.8.1
   easy_localization: ^3.0.3
 
 
-  # Utility 
+  #Utility 
   easy_logger: ^0.0.2
   logger: ^2.0.2+1
+  kartal: ^3.5.0
 
 
   widgets:
@@ -42,6 +51,7 @@ dev_dependencies:
   build_runner: ^2.4.6
   flutter_gen_runner: ^5.3.2
   flutter_launcher_icons: ^0.13.1
+  envied_generator: ^0.5.2
 
 
 flutter:
