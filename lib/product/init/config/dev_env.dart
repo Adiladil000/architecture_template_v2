@@ -7,6 +7,8 @@ part 'dev_env.g.dart';
   obfuscate: true,
   path: 'asset/env/.dev.env',
 )
+
+/// Production environment variables
 final class DevEnv implements AppConfiguration {
   @EnviedField(varName: 'BASE_URL')
   static final String _baseUrl = DevEnv._baseUrl;
