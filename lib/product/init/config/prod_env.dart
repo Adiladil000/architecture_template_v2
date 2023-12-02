@@ -9,10 +9,10 @@ part 'prod_env.g.dart';
 )
 final class ProdEnv implements AppConfiguration {
   @EnviedField(varName: 'BASE_URL')
-  static final String _baseUrl = ProdEnv._baseUrl;
+  static final String _baseUrl = _ProdEnv._baseUrl;
 
   @EnviedField(varName: 'API_KEY')
-  static final String _apiKey = ProdEnv._apiKey;
+  static final String _apiKey = _ProdEnv._apiKey;
 
   @override
   // TODO: implement apiKey
