@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 
 /// Application environment manager class
 final class AppEnvironment {
-  /// Setup application environment
+  /// Setup application environment.
   AppEnvironment.setup({required AppConfiguration config}) {
     _config = config;
   }
