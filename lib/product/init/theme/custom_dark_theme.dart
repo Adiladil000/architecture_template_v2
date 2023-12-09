@@ -2,6 +2,7 @@ import 'package:architecture_template_v2/product/init/theme/custom_color_scheme.
 import 'package:architecture_template_v2/product/init/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
+/// Custom dark theme for project design
 final class CustomDarkTheme implements CustomTheme {
   @override
   ThemeData get themeData => ThemeData(
