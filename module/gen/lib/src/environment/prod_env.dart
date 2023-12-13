@@ -1,11 +1,11 @@
-import 'package:architecture_template_v2/product/init/config/app_configuration.dart';
 import 'package:envied/envied.dart';
+import 'package:gen/src/environment/app_configuration.dart';
 
 part 'prod_env.g.dart';
 
 @Envied(
   obfuscate: true,
-  path: 'asset/env/.prod.env',
+  path: 'assets/env/.prod.env',
 )
 final class ProdEnv implements AppConfiguration {
   @EnviedField(varName: 'BASE_URL')
