@@ -2,6 +2,7 @@ import 'package:architecture_template_v2/feature/home/view/mixin/home_view_mixin
 import 'package:architecture_template_v2/product/init/config/app_environment.dart';
 import 'package:architecture_template_v2/product/init/product_localization.dart';
 import 'package:architecture_template_v2/product/utility/constants/enums/locales.dart';
+import 'package:auto_route/annotations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,8 @@ import 'package:kartal/kartal.dart';
 
 part 'widget/home_app_bar.dart';
 
-class HomeView extends StatefulWidget {
+@RoutePage()
+final class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
