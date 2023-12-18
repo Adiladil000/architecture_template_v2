@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
 
-@AutoRouterConfig(replaceInRouteName: 'View,Route')
+@AutoRouterConfig(replaceInRouteName: AppRouter._replaceRouteName)
 
 /// Project router information class
 final class AppRouter extends _$AppRouter {
+  static const _replaceRouteName = 'View,Route';
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: HomeRoute.page, initial: true),

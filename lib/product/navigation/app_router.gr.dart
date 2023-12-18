@@ -17,7 +17,7 @@ abstract class _$AppRouter extends RootStackRouter {
   final Map<String, PageFactory> pagesMap = {
     HomeDetailRoute.name: (routeData) {
       final args = routeData.argsAs<HomeDetailRouteArgs>();
-      return AutoRoutePage<dynamic>(
+      return AutoRoutePage<bool?>(
         routeData: routeData,
         child: HomeDetailView(
           id: args.id,
