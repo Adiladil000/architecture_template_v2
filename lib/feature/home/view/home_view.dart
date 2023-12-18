@@ -38,7 +38,7 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
           const Text('Change Language'),
           ElevatedButton(
             onPressed: () {
-              ProductLocalization.updateLanguage(context: context, value: Locales.tr);
+              //ProductLocalization.updateLanguage(context: context, value: Locales.tr);
             },
             child: Text(
               style: context.general.textTheme.bodySmall,
