@@ -3,12 +3,15 @@ import 'package:architecture_template_v2/product/init/config/app_environment.dar
 import 'package:architecture_template_v2/product/navigation/app_router.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:architecture_template_v2/product/init/language/locale_keys.g.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
+
+import 'package:architecture_template_v2/product/widget/project_network_image.dart';
 
 part 'widget/home_app_bar.dart';
 
@@ -29,6 +32,9 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //Assets.icons.icLove.svg(package: 'gen'),
+          const ProjectNetworkImage(
+            url: '',
+          ),
           Assets.lottie.animZombie.lottie(package: 'gen'),
           Assets.images.imgFlags.image(package: 'gen'),
           ElevatedButton(

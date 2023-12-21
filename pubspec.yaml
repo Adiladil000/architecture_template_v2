@@ -36,8 +36,11 @@ dependencies:
   widgets:
     path: module/widgets
 
+  # modules
   gen:
     path: module/gen
+  common:
+    path: module/common
 
 # dependency_overrides:
 #   cupertino_icons: ^1.0.1
