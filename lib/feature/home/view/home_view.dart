@@ -25,6 +25,12 @@ final class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> with HomeViewMixin {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const _HomeAppBar(),
@@ -32,10 +38,50 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //Assets.icons.icLove.svg(package: 'gen'),
+
+          Text(''.ext.version),
+          Text(
+            'veli',
+            style: context.general.textTheme.titleLarge?.copyWith(
+              color: 'FFF0001'.ext.color,
+            ),
+          ),
+          SizedBox(
+            height: context.sized.dynamicHeight(0.4),
+          ),
+          // Future<String>().ext.toBuild(
+          //       onSuccess: onSuccess,
+          //       loadingWidget: loadingWidget,
+          //       notFoundWidget: notFoundWidget,
+          //       onError: onError,
+          //     ),
+          FloatingActionButton(
+            onPressed: () {
+              // 'Kartal'.ext.launchMaps();
+              // CustomLinkPreview.getLinkPreviewData('www.google.com');
+              // CustomLogger.showError('object');
+
+              final dummyUsers = List<User?>.generate(
+                10,
+                (index) => User(name: 'User $index', money: index * 100),
+              );
+              final items = dummyUsers
+                  .where((element) {
+                    if (element?.money == null) return false;
+                    return element!.money! > 500;
+                  })
+                  .exts
+                  .makeSafeCustom(
+                    (value) => value?.name.ext.isNotNullOrNoEmpty ?? false,
+                  );
+            },
+            child: const Text('En'),
+          ),
+
           const ProjectNetworkImage(
             url: '',
           ),
-          Assets.lottie.animZombie.lottie(package: 'gen'),
+          Expanded(child: Assets.lottie.animZombie.lottie(package: 'gen')),
           Assets.images.imgFlags.image(package: 'gen'),
           ElevatedButton(
             onPressed: () async {
@@ -59,4 +105,13 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
       ),
     );
   }
+
+  void calculate(List<String> items) {}
+}
+
+class User {
+  User({required this.name, required this.money});
+
+  final String? name;
+  final double? money;
 }
