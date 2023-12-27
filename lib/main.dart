@@ -4,6 +4,7 @@ import 'package:architecture_template_v2/product/init/theme/index.dart';
 import 'package:architecture_template_v2/product/navigation/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets/widgets.dart';
 
 void main() async {
   await ApplicationInitialize().make();
@@ -20,6 +21,7 @@ final class _MyApp extends StatelessWidget {
       theme: CustomLightTheme().themeData,
       darkTheme: CustomDarkTheme().themeData,
       themeMode: ThemeMode.light,
+      builder: CustomResponsive.build,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

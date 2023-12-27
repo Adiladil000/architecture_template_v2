@@ -12,6 +12,7 @@ import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
 import 'package:architecture_template_v2/product/widget/project_network_image.dart';
+import 'package:widgets/widgets.dart';
 
 part 'widget/home_app_bar.dart';
 
@@ -39,7 +40,12 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
         children: [
           //Assets.icons.icLove.svg(package: 'gen'),
 
-          Text(''.ext.version),
+          AdaptAllView(
+            phone: Text(''.ext.version),
+            tablet: Text(''.ext.version),
+            desktop: Text(''.ext.version),
+          ),
+          Image.network(''.ext.randomImage),
           Text(
             'veli',
             style: context.general.textTheme.titleLarge?.copyWith(
@@ -83,24 +89,24 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
           ),
           Expanded(child: Assets.lottie.animZombie.lottie(package: 'gen')),
           Assets.images.imgFlags.image(package: 'gen'),
-          ElevatedButton(
-            onPressed: () async {
-              final response = await context.router.push<bool?>(
-                HomeDetailRoute(id: '1'),
-              );
-            },
-            child: Text(AppEnvironmentItems.baseUrl.value),
-          ),
-          const Text('Change Language'),
-          ElevatedButton(
-            onPressed: () {
-              //ProductLocalization.updateLanguage(context: context, value: Locales.tr);
-            },
-            child: Text(
-              style: context.general.textTheme.bodySmall,
-              LocaleKeys.general_button_save,
-            ).tr(args: ['Adil']),
-          ),
+          // ElevatedButton(
+          //   onPressed: () async {
+          //     final response = await context.router.push<bool?>(
+          //       HomeDetailRoute(id: '1'),
+          //     );
+          //   },
+          //   child: Text(AppEnvironmentItems.baseUrl.value),
+          // ),
+          // const Text('Change Language'),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     //ProductLocalization.updateLanguage(context: context, value: Locales.tr);
+          //   },
+          //   child: Text(
+          //     style: context.general.textTheme.bodySmall,
+          //     LocaleKeys.general_button_save,
+          //   ).tr(args: ['Adil']),
+          // ),
         ],
       ),
     );
