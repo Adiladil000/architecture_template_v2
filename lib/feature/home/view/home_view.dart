@@ -1,17 +1,10 @@
 import 'package:architecture_template_v2/feature/home/view/mixin/home_view_mixin.dart';
-import 'package:architecture_template_v2/product/init/config/app_environment.dart';
-import 'package:architecture_template_v2/product/navigation/app_router.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'package:architecture_template_v2/product/init/language/locale_keys.g.dart';
-import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
-import 'package:architecture_template_v2/product/widget/project_network_image.dart';
 import 'package:widgets/widgets.dart';
 
 part 'widget/home_app_bar.dart';
@@ -41,72 +34,32 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
           //Assets.icons.icLove.svg(package: 'gen'),
 
           AdaptAllView(
-            phone: Text(''.ext.version),
-            tablet: Text(''.ext.version),
-            desktop: Text(''.ext.version),
+            phone: Text(
+              ''.ext.version,
+              style: context.general.textTheme.titleLarge,
+            ),
+            tablet: Text(
+              ''.ext.version,
+              style: context.general.textTheme.bodyLarge,
+            ),
+            desktop: Text(
+              ''.ext.version,
+              style: context.general.textTheme.headlineLarge,
+            ),
           ),
-          Image.network(''.ext.randomImage),
           Text(
             'veli',
             style: context.general.textTheme.titleLarge?.copyWith(
               color: 'FFF0001'.ext.color,
             ),
           ),
-          SizedBox(
-            height: context.sized.dynamicHeight(0.4),
-          ),
-          // Future<String>().ext.toBuild(
-          //       onSuccess: onSuccess,
-          //       loadingWidget: loadingWidget,
-          //       notFoundWidget: notFoundWidget,
-          //       onError: onError,
-          //     ),
-          FloatingActionButton(
-            onPressed: () {
-              // 'Kartal'.ext.launchMaps();
-              // CustomLinkPreview.getLinkPreviewData('www.google.com');
-              // CustomLogger.showError('object');
 
-              final dummyUsers = List<User?>.generate(
-                10,
-                (index) => User(name: 'User $index', money: index * 100),
-              );
-              final items = dummyUsers
-                  .where((element) {
-                    if (element?.money == null) return false;
-                    return element!.money! > 500;
-                  })
-                  .exts
-                  .makeSafeCustom(
-                    (value) => value?.name.ext.isNotNullOrNoEmpty ?? false,
-                  );
-            },
-            child: const Text('En'),
+          Expanded(
+            child: Image.network(
+              'https://picsum.photos/500/500',
+            ),
           ),
-
-          const ProjectNetworkImage(
-            url: '',
-          ),
-          Expanded(child: Assets.lottie.animZombie.lottie(package: 'gen')),
-          Assets.images.imgFlags.image(package: 'gen'),
-          // ElevatedButton(
-          //   onPressed: () async {
-          //     final response = await context.router.push<bool?>(
-          //       HomeDetailRoute(id: '1'),
-          //     );
-          //   },
-          //   child: Text(AppEnvironmentItems.baseUrl.value),
-          // ),
-          // const Text('Change Language'),
-          // ElevatedButton(
-          //   onPressed: () {
-          //     //ProductLocalization.updateLanguage(context: context, value: Locales.tr);
-          //   },
-          //   child: Text(
-          //     style: context.general.textTheme.bodySmall,
-          //     LocaleKeys.general_button_save,
-          //   ).tr(args: ['Adil']),
-          // ),
+          const Expanded(child: Placeholder()),
         ],
       ),
     );
