@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets/src/core/dialog_base.dart';
 
 /// Show a dialog for success
 class SuccessDialog extends StatelessWidget {
@@ -14,9 +15,7 @@ class SuccessDialog extends StatelessWidget {
     required String title,
     required BuildContext context,
   }) async {
-    await showDialog<bool>(
-      barrierDismissible: false,
-      useSafeArea: false,
+    await DialogBase.show<bool>(
       context: context,
       builder: (context) => SuccessDialog(title: title),
     );
