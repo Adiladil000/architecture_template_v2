@@ -5,10 +5,15 @@ import 'package:architecture_template_v2/product/navigation/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets/widgets.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() async {
   await ApplicationInitialize().make();
-  runApp(ProductLocalization(child: const _MyApp()));
+  runApp(
+    DevicePreview(
+      builder: (context) => ProductLocalization(child: const _MyApp()),
+    ),
+  );
 }
 
 final class _MyApp extends StatelessWidget {

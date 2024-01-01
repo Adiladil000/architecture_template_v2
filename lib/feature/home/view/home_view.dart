@@ -1,17 +1,11 @@
 import 'package:architecture_template_v2/feature/home/view/mixin/home_view_mixin.dart';
-import 'package:architecture_template_v2/product/init/config/app_environment.dart';
-import 'package:architecture_template_v2/product/navigation/app_router.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:common/common.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'package:architecture_template_v2/product/init/language/locale_keys.g.dart';
-import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
-import 'package:architecture_template_v2/product/widget/project_network_image.dart';
+import 'package:widgets/widgets.dart';
 
 part 'widget/home_app_bar.dart';
 
@@ -25,38 +19,63 @@ final class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> with HomeViewMixin {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          SuccessDialog.show(title: 'title', context: context);
+        },
+      ),
       appBar: const _HomeAppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //Assets.icons.icLove.svg(package: 'gen'),
-          const ProjectNetworkImage(
-            url: '',
+
+          AdaptAllView(
+            phone: Text(
+              ''.ext.version,
+              style: context.general.textTheme.titleLarge,
+            ),
+            tablet: Text(
+              ''.ext.version,
+              style: context.general.textTheme.bodyLarge,
+            ),
+            desktop: Text(
+              ''.ext.version,
+              style: context.general.textTheme.headlineLarge,
+            ),
           ),
-          Assets.lottie.animZombie.lottie(package: 'gen'),
-          Assets.images.imgFlags.image(package: 'gen'),
-          ElevatedButton(
-            onPressed: () async {
-              final response = await context.router.push<bool?>(
-                HomeDetailRoute(id: '1'),
-              );
-            },
-            child: Text(AppEnvironmentItems.baseUrl.value),
+          Text(
+            'veli',
+            style: context.general.textTheme.titleLarge?.copyWith(
+              color: 'FFF0001'.ext.color,
+            ),
           ),
-          const Text('Change Language'),
-          ElevatedButton(
-            onPressed: () {
-              //ProductLocalization.updateLanguage(context: context, value: Locales.tr);
-            },
-            child: Text(
-              style: context.general.textTheme.bodySmall,
-              LocaleKeys.general_button_save,
-            ).tr(args: ['Adil']),
+
+          Expanded(
+            child: Image.network(
+              'https://picsum.photos/500/500',
+            ),
           ),
+          const Expanded(child: Placeholder()),
         ],
       ),
     );
   }
+
+  void calculate(List<String> items) {}
+}
+
+class User {
+  User({required this.name, required this.money});
+
+  final String? name;
+  final double? money;
 }
