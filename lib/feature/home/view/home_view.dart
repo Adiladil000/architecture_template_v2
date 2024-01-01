@@ -1,4 +1,5 @@
 import 'package:architecture_template_v2/feature/home/view/mixin/home_view_mixin.dart';
+import 'package:architecture_template_v2/product/widget/padding/project_padding.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -38,18 +39,21 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
         children: [
           //Assets.icons.icLove.svg(package: 'gen'),
 
-          AdaptAllView(
-            phone: Text(
-              ''.ext.version,
-              style: context.general.textTheme.titleLarge,
-            ),
-            tablet: Text(
-              ''.ext.version,
-              style: context.general.textTheme.bodyLarge,
-            ),
-            desktop: Text(
-              ''.ext.version,
-              style: context.general.textTheme.headlineLarge,
+          Padding(
+            padding: const ProjectPadding.allNormal(),
+            child: AdaptAllView(
+              phone: Text(
+                ''.ext.version,
+                style: context.general.textTheme.titleLarge,
+              ),
+              tablet: Text(
+                ''.ext.version,
+                style: context.general.textTheme.bodyLarge,
+              ),
+              desktop: Text(
+                ''.ext.version,
+                style: context.general.textTheme.headlineLarge,
+              ),
             ),
           ),
           Text(
