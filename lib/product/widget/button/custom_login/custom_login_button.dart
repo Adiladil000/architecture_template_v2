@@ -1,6 +1,9 @@
 import 'package:architecture_template_v2/product/widget/button/normal_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets/widgets.dart';
+
+part 'custom_login_button_mixin.dart';
 
 final class CustomLoginButton extends StatefulWidget {
   const CustomLoginButton({required this.onOperation, super.key});
@@ -10,8 +13,7 @@ final class CustomLoginButton extends StatefulWidget {
   State<CustomLoginButton> createState() => _CustomLoginButtonState();
 }
 
-class _CustomLoginButtonState extends State<CustomLoginButton> {
-  final ValueNotifier<bool> _isLoadingNotifier = ValueNotifier<bool>(false);
+class _CustomLoginButtonState extends State<CustomLoginButton> with MountedMixin, _CustomLoginButtonMixin {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
@@ -21,12 +23,7 @@ class _CustomLoginButtonState extends State<CustomLoginButton> {
         return NormalButton(
           title: 'Login',
           onPressed: () async {
-            _isLoadingNotifier.value = true;
-            final response = await widget.onOperation.call();
-            if (response) {
-              Navigator.of(context).pop();
-            }
-            _isLoadingNotifier.value = false;
+            await _onPressed(context);
           },
         );
       },
