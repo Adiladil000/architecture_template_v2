@@ -1,18 +1,19 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
 
 part 'user.g.dart';
 
 @JsonSerializable()
-class User extends Equatable {
-  const User({this.userId, this.id, this.title, this.body});
+class User extends INetworkModel<User> with EquatableMixin {
+  User({this.userId, this.id, this.title, this.body});
 
   /// Get user from json
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
-  final String? userId;
-  final String? id;
+  final int? userId;
+  final int? id;
   final String? title;
   final String? body;
 
@@ -20,11 +21,17 @@ class User extends Equatable {
   List<Object?> get props => [userId, id, title, body];
 
   /// User model to map object
+  @override
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
+  @override
+  User fromJson(Map<String, dynamic> json) {
+    return _$UserFromJson(json);
+  }
+
   User copyWith({
-    String? userId,
-    String? id,
+    int? userId,
+    int? id,
     String? title,
     String? body,
   }) {

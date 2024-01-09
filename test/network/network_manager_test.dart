@@ -1,13 +1,25 @@
+import 'package:architecture_template_v2/product/init/config/app_environment.dart';
 import 'package:architecture_template_v2/product/service/manager/product_service_manager.dart';
 import 'package:architecture_template_v2/product/service/manager/product_service_path.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gen/gen.dart';
+import 'package:vexana/vexana.dart';
 
 void main() {
-  final manager = ProductNetworkManager.base();
+  late final ProductNetworkManager manager;
 
-  setUp(() {});
+  setUp(() {
+    AppEnvironment.general();
+    manager = ProductNetworkManager.base();
+  });
 
-  test('get users items from api', () {
-    manager.send(ProductServicePath.userV1.value, parseModel: parseModel, method: method);
+  test('get users items from api', () async {
+    final response = await manager.send<User, List<User>>(
+      ProductServicePath.posts.value,
+      parseModel: User(),
+      method: RequestType.GET,
+    );
+
+    expect(response.data, isNotNull);
   });
 }

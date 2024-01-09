@@ -1,5 +1,6 @@
 enum ProductServicePath {
   userV1('user'),
+  posts('posts'),
   userV2('v2/users');
 
   final String value;
