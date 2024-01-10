@@ -41,6 +41,7 @@ dependencies:
     path: module/gen
   common:
     path: module/common
+  get_it: ^7.6.6
 
 # dependency_overrides:
 #   cupertino_icons: ^1.0.1
