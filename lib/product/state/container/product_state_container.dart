@@ -11,6 +11,7 @@ class ProductContainer {
   /// Product core required items
   static void setup() {
     _getIt
+      // ..registerSingleton()
       ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
       ..registerLazySingleton<ProductViewModel>(ProductViewModel.new);
   }

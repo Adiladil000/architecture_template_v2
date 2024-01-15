@@ -41,6 +41,9 @@ dependencies:
     path: module/gen
   common:
     path: module/common
+  core:
+    path: module/core
+
   get_it: ^7.6.6
 
 # dependency_overrides:
