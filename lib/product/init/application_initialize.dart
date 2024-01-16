@@ -41,6 +41,8 @@ final class ApplicationInitialize {
 
     /// Application environment initialize
     _productEnvironmentWithContainer();
+
+    await ProductStateItems.productCache.init();
   }
 
   /// DO NOT CHANGE THIS METHOD

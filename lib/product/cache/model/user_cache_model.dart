@@ -5,6 +5,8 @@ import 'package:kartal/kartal.dart';
 final class UserCacheModel with CacheModel {
   UserCacheModel({required this.user});
 
+  UserCacheModel.empty() : user = User();
+
   final User user;
 
   @override
@@ -19,13 +21,11 @@ final class UserCacheModel with CacheModel {
   }
 
   @override
-  // TODO: implement id
-  String get id => throw UnimplementedError();
+  String get id => user.id.toString();
 
   @override
   Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    throw UnimplementedError();
+    return user.toJson();
   }
 
   UserCacheModel copyWith({
