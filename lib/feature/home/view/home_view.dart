@@ -62,11 +62,13 @@ class _UserList extends StatelessWidget {
           return ListView.builder(
             itemCount: state.length,
             itemBuilder: (BuildContext context, int index) {
+              final user = state[index];
               return ListTile(
                 title: Text(
-                  state[index].userId.toString(),
+                  user.userId.toString(),
                 ),
-                subtitle: Text(state[index].body.toString()),
+                trailing: Text(user.body?[0] ?? ''),
+                subtitle: Text(user.body.toString()),
               );
             },
           );
