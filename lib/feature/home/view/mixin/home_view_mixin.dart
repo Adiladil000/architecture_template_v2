@@ -24,6 +24,7 @@ mixin HomeViewMixin on BaseState<HomeView> {
 
     _homeViewModel = HomeViewModel(
       operationService: LoginService(productNetworkManager),
+      userCacheOperation: ProductStateItems.productCache.userCacheOperation,
     );
   }
 }

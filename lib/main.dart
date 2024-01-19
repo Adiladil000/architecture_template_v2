@@ -10,7 +10,7 @@ import 'package:widgets/widgets.dart';
 
 import 'package:architecture_template_v2/product/state/view_model/product_view_model.dart';
 
-void main() async {
+Future<void> main() async {
   await ApplicationInitialize().make();
   runApp(ProductLocalization(child: const StateInitialize(child: _MyApp())));
 }
